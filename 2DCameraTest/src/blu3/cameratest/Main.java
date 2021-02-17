@@ -11,6 +11,17 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
+//------------------------------------------------------------------------------
+// Some real tasty spaghetti code right here. All of this random bullshit comes
+// together to make a window that can draw pixels. Base input code is not mine
+// and the BufferStrategy code was taken straight from stackoverflow.
+// Only change things in this unless absolutely necessary, and please, for the
+// love of God, add code comments!
+//
+// As of 02/17/2021 I have decided to make this a 2D side-scroller, so I can at 
+// least try experimenting with video-game physics. The concept? Similar
+// to that of Terraria I suppose, but just *different*.
+//------------------------------------------------------------------------------
 public class Main extends Canvas implements Runnable {
 
     private final BufferedImage img;
@@ -53,6 +64,8 @@ public class Main extends Canvas implements Runnable {
 
     @Override
     public void run() {
+        // would you believe that all this is for an FPS counter?
+        // FIXME: this is terrible - make a timer and use it instead
         int frames = 0;
         double unprocessedSeconds = 0;
         long previousTime = System.nanoTime();
@@ -81,7 +94,7 @@ public class Main extends Canvas implements Runnable {
                     frames++;
                 }
             } catch (Exception e) {
-                Logger.ERROR("Exception caught! Shutting down...");
+                Logger.ERROR("[Fatal] Exception caught! Shutting down...");
                 e.printStackTrace();
                 System.exit(1);
             }
@@ -96,13 +109,12 @@ public class Main extends Canvas implements Runnable {
     }
 
     public void tick(boolean[] key, boolean mouseDown) {
-        boolean forward = key[KeyEvent.VK_W];
-        boolean back = key[KeyEvent.VK_S];
+        boolean forward = key[KeyEvent.VK_W]; // TODO: remove this
+        boolean back = key[KeyEvent.VK_S]; // TODO: remove this
         boolean left = key[KeyEvent.VK_A];
         boolean right = key[KeyEvent.VK_D];
         // boolean jump = key[KeyEvent.VK_SPACE];
         // boolean esc = key[KeyEvent.VK_ESCAPE];
-
         controls.tick(forward, back, left, right, mouseDown);
     }
 
@@ -111,9 +123,9 @@ public class Main extends Canvas implements Runnable {
         if (bs == null) {
             createBufferStrategy(3);
             return;
-        }
-        Renderer.render();
-        System.arraycopy(Renderer.pixels, 0, pixels, 0, Renderer.pixels.length);
+        }   
+        Renderer.render(); // This must be called here for now.
+        System.arraycopy(Renderer.pixels, 0, pixels, 0, Renderer.pixels.length); // TODO: different thread for math and synchronize it with this.
         Graphics g = bs.getDrawGraphics();
         g.drawImage(img, 0, 0, WIDTH, HEIGHT, null);
         g.setFont(new Font("Verdana", Font.PLAIN, 20));
