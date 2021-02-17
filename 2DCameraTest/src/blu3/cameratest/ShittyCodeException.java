@@ -10,9 +10,10 @@ public class ShittyCodeException extends RuntimeException {
     }
    
     public void post() {
+        ShittyCodeException up = this;
         Logger.ERROR("[FATAL] ShittyCodeException thrown! Shutting down...");
-        this.printStackTrace();
+        up.printStackTrace();
         System.exit(1);
-        throw this;
+        throw up;
     }
 }
