@@ -5,6 +5,12 @@ import blu3.cameratest.Main;
 import java.util.ArrayList;
 import java.util.List;
 
+//-------------------------------------------------------
+// Allows you to input the X and Y coordinates of a pixel
+// and converts it to a position on the screen.
+// Highly inefficient, however fixing it is not within my pay grade.
+//-------------------------------------------------------
+
 public class PixelPos {
 
     private final int x, y, colour;
@@ -28,7 +34,7 @@ public class PixelPos {
                     PixelPos pixelPos = new PixelPos(x, y, colour);
                     // If the pixel is offscreen or the pixel is already the right colour, don't bother changing it.
                     if (pixelPos.isOffscreen()) continue;
-                    if (Renderer.pixels[pixelPos.getScreenPosition(Main.WIDTH)] == colour) continue;
+                    if (Renderer.pixels[pixelPos.getScreenPosition(Main.WIDTH)] == colour) continue; // NOTE: this line currently doesnt work. FIXME: this is stupid
                     pos.add(pixelPos);
                 } catch (ArrayIndexOutOfBoundsException ignored) {
                 }
@@ -38,8 +44,8 @@ public class PixelPos {
     }
 
     // Pretty self explanatory, if it isn't within the boundaries of the screen return true
-    // the Main.WIDTH - 1 is because of some minuscule problem of ONE FUCKING PIXEL
-    // rendering incorrectly on the left side of the screen while the rectangle is half over the right
+    // the Main.WIDTH - 1 is because of some minuscule problem where ONE FUCKING PIXEL
+    // rendered incorrectly on the left side of the screen while the rectangle is half over the right
     public boolean isOffscreen() {
         return x < 0 || x > Main.WIDTH - 1 || y < 0 || y > Main.HEIGHT;
     }
