@@ -5,29 +5,32 @@ import blu3.cameratest.Main;
 
 import java.util.Arrays;
 
+ //------------------------------------------------------------------------------
+ // This is THE renderer. If you want to draw something, do it here.
+ // All rendering things must be called via the render() method, else you'll
+ // get some real bad screen-tearing...
+ //------------------------------------------------------------------------------
+
 public class Renderer {
     public static int[] pixels = new int[Main.WIDTH * Main.HEIGHT];
 
+    // TODO: add an annotation or similar to be able to call draw methods outside this
     public static void render() {
         Arrays.fill(pixels, 0);
         drawRect(700, 100, 800, 200, 0xFF00FFFF);
     }
 
-    /**
-     * Draws a solid colour rectangle to the screen
-     *
-     * @param left   Left side
-     * @param top    Top side
-     * @param right  Right side
-     * @param bottom Bottom side
-     * @param colour The colour you want the pixel to be, best done using hexadecimal (0xAARRGGBB).
-     */
+    //------------------------------------------------------------------------------
+    // Draws a solid colour rectangle to the screen, using the 4 side parameters.
+    // The colour is best done using hexadecimal (0xAARRGGBB).
+    // If for some reason you try to invert the sides, an exception is thrown.
+    //------------------------------------------------------------------------------
     public static void drawRect(int left, int top, int right, int bottom, int colour) {
         // If right comes before left or bottom comes before top it simply won't
         // render, and that's kind of a problem when our entire goal is to render.
         // So just throw an exception and exit.
         if (left > right || top > bottom) {
-            Logger.ERROR("Drawing invalid rectangle.");
+            Logger.ERROR("You tried to draw a shape that doesn't exist");
             throw new RuntimeException("why would you do that?");
         }
         // Don't even bother if entirely offscreen
