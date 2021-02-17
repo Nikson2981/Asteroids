@@ -1,7 +1,6 @@
 package blu3.cameratest.renderer;
 
-import blu3.cameratest.Logger;
-import blu3.cameratest.Main;
+import blu3.cameratest.*;
 
 import java.util.Arrays;
 
@@ -31,7 +30,9 @@ public class Renderer {
         // So just throw an exception and exit.
         if (left > right || top > bottom) {
             Logger.ERROR("You tried to draw a shape that doesn't exist");
-            throw new RuntimeException("why would you do that?");
+            ShittyCodeException e = new ShittyCodeException("fffuck-k...");
+            e.post();
+            return;
         }
         // Don't even bother if entirely offscreen
         if (left + Camera.getOffsetX() > Main.WIDTH || top + Camera.getOffsetY() > Main.HEIGHT || right + Camera.getOffsetX() < 0 || bottom + Camera.getOffsetY() < 0) {
