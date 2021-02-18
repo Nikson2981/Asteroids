@@ -14,7 +14,7 @@ public class ShittyCodeException extends Exception {
     }
    
     public void post() {
-        ShittyCodeException up = this;
+        RuntimeException up = new RuntimeException(this);
         Logger.ERROR("[FATAL] ShittyCodeException thrown! Shutting down...");
         up.printStackTrace();
         System.exit(1);

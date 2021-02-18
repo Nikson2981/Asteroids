@@ -29,9 +29,15 @@ public class Main extends Canvas implements Runnable {
     private boolean running = false;
     public static final int WIDTH = 1280, HEIGHT = 720;
     public static final String NAME = "2DCameraTest";
-    private final InputHandler input;
+    public final InputHandler input;
     private final Controller controls;
     private int fps = 0;
+
+    private static Main INSTANCE;
+
+    public static Main getRenderThread() {
+        return INSTANCE;
+    }
 
     public Main() {
         Dimension size = new Dimension(WIDTH, HEIGHT);
@@ -46,6 +52,7 @@ public class Main extends Canvas implements Runnable {
         addFocusListener(input);
         addMouseListener(input);
         addMouseMotionListener(input);
+        INSTANCE = this;
     }
 
     public static void main(String[] args) {
@@ -58,8 +65,9 @@ public class Main extends Canvas implements Runnable {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
-        Logger.INFO("Starting...");
+        Logger.INFO("Render thread started");
         main.start();
+        GameThread.main(null);
     }
 
     @Override
@@ -90,7 +98,6 @@ public class Main extends Canvas implements Runnable {
             try {
                 if(ticked) {
                     render();
-                    tick(input.key, input.mouseDown);
                     frames++;
                 }
             } catch (Exception e) {

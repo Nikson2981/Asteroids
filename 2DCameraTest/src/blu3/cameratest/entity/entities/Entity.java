@@ -20,9 +20,8 @@ public class Entity {
     //-----------------------------------------------------------------------
     public Entity(String name, int defaultHealth, float startPosX, float startPosY) {
         
-        if (name == null || defaultHealth == null || startPosX == null || startPosY == null) {
-            RuntimeException up = new RuntimeException("Entity parameters cannot be null");
-            throw up;
+        if (name == null) {
+            throw new RuntimeException("Entity parameters cannot be null");
         }
         
         this.name = name;

@@ -18,22 +18,22 @@ public class Controller {
 		// TODO: EntityMovementCalc class, and add offsets to Camera based on speed 
 		// instead of sudden starting and stopping
 		if(forward) {
-			Camera.addOffsetY(-1);
+			Camera.addOffsetY(-2);
 			walk = true;
 		}
 		
 		if(back) {
-			Camera.addOffsetY(1);
+			Camera.addOffsetY(2);
 			walk = true;
 		}
 		
 		if(left) {
-			Camera.addOffsetX(-1);
+			Camera.addOffsetX(-2);
 			walk = true;
 		}
 		
 		if(right) {
-			Camera.addOffsetX(1);
+			Camera.addOffsetX(2);
 			walk = true;
 		}
 
