@@ -13,12 +13,18 @@ import java.util.List;
 
 public class PixelPos {
 
-    private final int x, y, colour;
+    private final int x, y;
+    private int colour;
 
     public PixelPos(int x, int y, int colour) {
         this.x = x;
         this.y = y;
         this.colour = colour;
+    }
+
+    public PixelPos(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public int getScreenPosition(int screenWidth) {
@@ -34,7 +40,7 @@ public class PixelPos {
                     PixelPos pixelPos = new PixelPos(x, y, colour);
                     // If the pixel is offscreen or the pixel is already the right colour, don't bother changing it.
                     if (pixelPos.isOffscreen()) continue;
-                    if (Renderer.pixels[pixelPos.getScreenPosition(Main.WIDTH)] == colour) continue; // NOTE: this line currently doesnt work. FIXME: this is stupid
+                    //if (Renderer.pixels[pixelPos.getScreenPosition(Main.WIDTH)] == colour) continue; // NOTE: this line currently doesnt work. FIXME: this is stupid
                     pos.add(pixelPos);
                 } catch (ArrayIndexOutOfBoundsException ignored) {
                 }

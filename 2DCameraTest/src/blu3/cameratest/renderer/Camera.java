@@ -13,13 +13,13 @@ public class Camera {
         
     }
 
-    private static long offsetX = 0, offsetY = 0;
+    private static int offsetX = 0, offsetY = 0;
 
-    public static long getOffsetX() {
+    public static int getOffsetX() {
         return offsetX;
     }
 
-    public static long getOffsetY() {
+    public static int getOffsetY() {
         return offsetY;
     }
 

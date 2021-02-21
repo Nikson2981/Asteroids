@@ -14,7 +14,7 @@ public class InputHandler implements KeyListener, FocusListener, MouseListener, 
 	public boolean[] key = new boolean[68836];
 	public static int MouseX;
 	public static int MouseY;
-	public boolean mouseDown;
+	public boolean mouseDown = false;
 	
 	@Override
 	public void mouseDragged(MouseEvent e) {

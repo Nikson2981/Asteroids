@@ -7,7 +7,6 @@ public class GameThread implements Runnable{
 
     public GameThread() {
         timer = new TimerUtils();
-
     }
 
     @Override
@@ -31,6 +30,6 @@ public class GameThread implements Runnable{
         began = true;
         Thread thread = new Thread(this, "GameThread");
         thread.start();
-        Logger.INFO("Game thread started");
+        Logger.INFO("Game thread started.");
     }
 }

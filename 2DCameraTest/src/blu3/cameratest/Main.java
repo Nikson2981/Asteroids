@@ -3,6 +3,7 @@ package blu3.cameratest;
 import blu3.cameratest.controls.Controller;
 import blu3.cameratest.controls.InputHandler;
 import blu3.cameratest.renderer.Renderer;
+import blu3.cameratest.renderer.Textures;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +11,7 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
+import java.util.Map;
 
 //------------------------------------------------------------------------------
 // Some real tasty spaghetti code right here. All of this random bullshit comes
@@ -27,11 +29,13 @@ public class Main extends Canvas implements Runnable {
     private final BufferedImage img;
     private final int[] pixels;
     private boolean running = false;
-    public static final int WIDTH = 1280, HEIGHT = 720;
+    public static final int WIDTH = 1280, HEIGHT = WIDTH / 16 * 9;
     public static final String NAME = "2DCameraTest";
     public final InputHandler input;
     private final Controller controls;
     private int fps = 0;
+    public boolean titleScreen = true;
+    public static String PLAYERNAME = "";
 
     private static Main INSTANCE;
 
@@ -65,9 +69,11 @@ public class Main extends Canvas implements Runnable {
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
         frame.setVisible(true);
-        Logger.INFO("Render thread started");
+        Logger.INFO("Render thread started.");
         main.start();
         GameThread.main(null);
+        //PLAYERNAME = args[0];
+        PLAYERNAME = "Player";
     }
 
     @Override
@@ -131,12 +137,20 @@ public class Main extends Canvas implements Runnable {
             createBufferStrategy(3);
             return;
         }   
-        Renderer.render(); // This must be called here for now.
+        Renderer.render();
         System.arraycopy(Renderer.pixels, 0, pixels, 0, Renderer.pixels.length); // TODO: different thread for math and synchronize it with this.
         Graphics g = bs.getDrawGraphics();
         g.drawImage(img, 0, 0, WIDTH, HEIGHT, null);
+        for (Map.Entry<BufferedImage, Integer[]> e : Renderer.getImagesToRender().entrySet()) {
+            g.drawImage(e.getKey(), e.getValue()[0], e.getValue()[1], e.getValue()[2], e.getValue()[3], null);
+        }
+
         g.setFont(new Font("Verdana", Font.PLAIN, 20));
         g.setColor(Color.WHITE);
+        for (Map.Entry<String, Integer[]> e : Renderer.getStringsToDraw().entrySet()) {
+            g.drawString(e.getKey(), e.getValue()[0], e.getValue()[1]);
+        }
+
         g.drawString(fps + " FPS", 20, 30);
         g.dispose();
         bs.show();
