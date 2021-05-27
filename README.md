@@ -11,3 +11,10 @@ the directory is called 2dcameratest which just goes to show how little of an id
 the code is shit, you'd be better off writing your own.
 
 jarfile in releases probably
+
+# Controls
+
+ LMB - toggle debug (i know it's awful)
+ W, A, D - movement and turning
+ SPACE - shoot
+that's it
