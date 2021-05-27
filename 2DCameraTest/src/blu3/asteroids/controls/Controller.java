@@ -1,9 +1,9 @@
-package blu3.hub.controls;
+package blu3.asteroids.controls;
 
-import blu3.hub.Main;
-import blu3.hub.audio.Sounds;
-import blu3.hub.games.asteroids.Game;
-import blu3.hub.games.asteroids.player.Player;
+import blu3.asteroids.Main;
+import blu3.asteroids.audio.Sounds;
+import blu3.asteroids.games.asteroids.Game;
+import blu3.asteroids.games.asteroids.player.Player;
 
 public class Controller {
 
@@ -14,7 +14,7 @@ public class Controller {
     // This needs major refactoring, however that can come at a later date.
     //------------------------------------------------------------------------------
 
-    public void tick(boolean forward, boolean back, boolean left, boolean right, boolean mouse, boolean space) {
+    public void tick(boolean forward, boolean back, boolean left, boolean right, boolean mouse, boolean space) { // no moving backwards lol
         Player.updateMoveSpeed(forward);
         if (left) {
             Player.rot -= 3;

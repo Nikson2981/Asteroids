@@ -1,13 +1,12 @@
-package blu3.hub;
+package blu3.asteroids;
 
-import blu3.hub.audio.Sounds;
-import blu3.hub.controls.Controller;
-import blu3.hub.controls.InputHandler;
-import blu3.hub.games.asteroids.player.Player;
-import blu3.hub.math.StringListEntry;
-import blu3.hub.math.TextureListEntry;
-import blu3.hub.renderer.Renderer;
-import blu3.hub.renderer.Textures;
+import blu3.asteroids.audio.Sounds;
+import blu3.asteroids.controls.Controller;
+import blu3.asteroids.controls.InputHandler;
+import blu3.asteroids.math.StringListEntry;
+import blu3.asteroids.math.TextureListEntry;
+import blu3.asteroids.renderer.Renderer;
+import blu3.asteroids.renderer.Textures;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,8 +15,8 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
-import static blu3.hub.audio.Sounds.loadSound;
-import static blu3.hub.renderer.Textures.loadTexture;
+import static blu3.asteroids.audio.Sounds.loadSound;
+import static blu3.asteroids.renderer.Textures.loadTexture;
 
 //------------------------------------------------------------------------------
 // super fucking janky shit right here
@@ -27,7 +26,7 @@ public class Main extends Canvas implements Runnable {
     private final BufferedImage img;
     private final int[] pixels;
     private boolean running = false;
-    public static final int WIDTH = 1280, HEIGHT = WIDTH / 16 * 9;
+    public static final int WIDTH = 1280, HEIGHT = WIDTH / 16 * 9; // 720p by default
     public static final String NAME = "Asteroids";
     public final InputHandler input;
     private final Controller controls;
@@ -64,11 +63,10 @@ public class Main extends Canvas implements Runnable {
             i++;
         }
         i = 0;
-        while (i < Textures.textures.size()) {
+        while (i < Textures.textures.size()) { // load all assets now, one at a time
             loadTexture(i);
             i++;
         }
-
         JFrame frame = new JFrame();
         frame.add(main);
         frame.pack();
@@ -79,7 +77,7 @@ public class Main extends Canvas implements Runnable {
         frame.setVisible(true);
         Logger.INFO("Render thread started.");
         main.start();
-        GameThread.main(null);
+        GameThread.main(args);
     }
 
     @Override
@@ -125,12 +123,10 @@ public class Main extends Canvas implements Runnable {
         thread.start();
         running = true;
         long ms = System.currentTimeMillis();
-
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> { // for debug purposes only
             long seconds = (System.currentTimeMillis() - ms) / 1000;
             String str;
             long minutes, newSeconds;
-
             if (seconds < 60) str = seconds + "s";
             else {
                 minutes = seconds / 60;
@@ -142,7 +138,6 @@ public class Main extends Canvas implements Runnable {
                     str = hours + "h, " + newMinutes + "m, " + newSeconds + "s";
                 }
             }
-
             Logger.INFO("Total runtime: " + str);
             Logger.INFO("Shutting down...");
         }));
@@ -153,9 +148,7 @@ public class Main extends Canvas implements Runnable {
         boolean counterClockwise = key[KeyEvent.VK_A];
         boolean reverse = key[KeyEvent.VK_S];
         boolean clockwise = key[KeyEvent.VK_D];
-
         boolean space = key[KeyEvent.VK_SPACE];
-        // boolean esc = key[KeyEvent.VK_ESCAPE];
         controls.tick(forward, reverse, counterClockwise, clockwise, mouseDown, space);
     }
 

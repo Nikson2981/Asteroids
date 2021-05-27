@@ -1,8 +1,8 @@
-package blu3.hub.audio;
+package blu3.asteroids.audio;
 
-import blu3.hub.Logger;
-import blu3.hub.Main;
-import blu3.hub.math.StreamUtilities;
+import blu3.asteroids.Logger;
+import blu3.asteroids.Main;
+import blu3.asteroids.math.StreamUtilities;
 
 import javax.sound.sampled.*;
 import java.io.BufferedInputStream;
@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Sound {
+public class Sound { // this is really bad sound code and i highly recommend against using it if you want to make something more serious
     private final Set<Clip> clips = Collections.synchronizedSet(new HashSet<>());
 
     private AudioFormat format;
@@ -59,8 +59,8 @@ public class Sound {
             Clip clip = clips.stream()
                     .filter(c ->
                             c.getFramePosition() == 0 ||
-                                    c.getFramePosition() == c.getFrameLength())
-                    .findFirst()
+                                    c.getFramePosition() == c.getFrameLength()) // this is a problem...
+                    .findFirst() // ...but i couldn't be assed to fix it
                     .orElseGet(this::createNewClip);
             clip.setFramePosition(0);
             clip.start();

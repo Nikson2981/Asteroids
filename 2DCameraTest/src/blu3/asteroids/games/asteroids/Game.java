@@ -1,21 +1,21 @@
-package blu3.hub.games.asteroids;
+package blu3.asteroids.games.asteroids;
 
-import blu3.hub.Logger;
-import blu3.hub.Main;
-import blu3.hub.audio.Sounds;
-import blu3.hub.games.asteroids.asteroids.Asteroid;
-import blu3.hub.games.asteroids.asteroids.AsteroidBig;
-import blu3.hub.games.asteroids.asteroids.AsteroidMedium;
-import blu3.hub.games.asteroids.player.Bullet;
-import blu3.hub.games.asteroids.player.Player;
-import blu3.hub.renderer.Textures;
+import blu3.asteroids.Logger;
+import blu3.asteroids.Main;
+import blu3.asteroids.audio.Sounds;
+import blu3.asteroids.games.asteroids.asteroids.Asteroid;
+import blu3.asteroids.games.asteroids.asteroids.AsteroidBig;
+import blu3.asteroids.games.asteroids.asteroids.AsteroidMedium;
+import blu3.asteroids.games.asteroids.player.Bullet;
+import blu3.asteroids.games.asteroids.player.Player;
+import blu3.asteroids.renderer.Textures;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.List;
 import java.util.Random;
 
-public class Game {
+public class Game { // spaghetti code i know shut up
 
     public static List<Asteroid> asteroids = new ArrayList<>();
     public static List<Bullet> bullets = new ArrayList<>(); // fuck this arraylist in particular
@@ -77,7 +77,7 @@ public class Game {
             }
             for (Asteroid asteroid : asteroids) {
                 for (Bullet bullet : bullets) {
-                    if (asteroid.shot(bullet)) {
+                    if (asteroid.shot(bullet)) { // ew
                         if (asteroid instanceof AsteroidBig) {
                             AsteroidMedium one = new AsteroidMedium(asteroid.getX(), asteroid.getY(), asteroid.mX() / 2, asteroid.mY() / 2);
                             one.setTexture(random.nextBoolean() ? Textures.ASTEROID1 : Textures.ASTEROID2);
@@ -99,9 +99,10 @@ public class Game {
                     }
                 }
             }
-        } catch (ConcurrentModificationException ignored) {
+        } catch (ConcurrentModificationException ignored) { // i will never
+            // ever
         }
-
+// think about this exception again
         if (asteroids.isEmpty()) {
             level++;
             startGame();
@@ -113,7 +114,7 @@ public class Game {
     public static void spawnBullet() {
         if (!Player.alive) return;
         if (bullets.size() < 4) {
-            Sounds.playRandomShootSound();
+            Sounds.playRandomShootSound(); // ok
             Bullet bullet = new Bullet();
             bullet.center();
             bullet.calculateAngle();

@@ -1,6 +1,6 @@
-package blu3.hub.renderer;
+package blu3.asteroids.renderer;
 
-import blu3.hub.Main;
+import blu3.asteroids.Main;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +9,10 @@ import java.util.List;
 // Allows you to input the X and Y coordinates of a pixel
 // and converts it to a position on the screen.
 // Highly inefficient, however fixing it is not within my pay grade.
+//
+//...
+//
+// never allow me to code again
 //-------------------------------------------------------
 
 public class PixelPos {

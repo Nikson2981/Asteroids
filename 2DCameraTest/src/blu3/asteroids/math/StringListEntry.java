@@ -1,4 +1,4 @@
-package blu3.hub.math;
+package blu3.asteroids.math;
 
 import java.awt.*;
 
@@ -8,7 +8,7 @@ public class StringListEntry {
     public final int x, y;
     public final Color colour;
 
-    public StringListEntry(String text, int x, int y, Color colour) {
+    public StringListEntry(String text, int x, int y, Color colour) { // ...
         this.text = text;
         this.x = x;
         this.y = y;

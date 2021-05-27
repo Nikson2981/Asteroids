@@ -1,4 +1,4 @@
-package blu3.hub.audio;
+package blu3.asteroids.audio;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,13 +17,13 @@ public class Sounds {
 
     public static String soundLocation(String fileName) {
         return "/sounds/" + fileName + ".wav";
-    }
+    } // .wav only
 
-    public static final List<Sound> sounds = Arrays.asList(EXPLODE1, EXPLODE2, EXPLODE3, SHOOT1, SHOOT2, SHOOT3, BEEP, NEW_WAVE);
+    public static final List<Sound> sounds = Arrays.asList(EXPLODE1, EXPLODE2, EXPLODE3, SHOOT1, SHOOT2, SHOOT3, BEEP, NEW_WAVE); // add new sounds to the list
 
     public static void loadSound(int i) {
         if (sounds.get(i) != null) {
-            sounds.get(i).load();
+            sounds.get(i).load(); // handle loading all sounds immediately upon starting
         }
     }
 

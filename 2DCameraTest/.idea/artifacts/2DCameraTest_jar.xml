@@ -2,7 +2,7 @@
   <artifact type="jar" name="2DCameraTest:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/2DCameraTest_jar</output-path>
     <root id="archive" name="2DCameraTest.jar">
-      <element id="module-output" name="2DCameraTest" />
+      <element id="module-output" name="Asteroids" />
     </root>
   </artifact>
 </component>

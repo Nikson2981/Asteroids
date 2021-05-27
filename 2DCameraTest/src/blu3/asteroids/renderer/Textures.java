@@ -1,4 +1,4 @@
-package blu3.hub.renderer;
+package blu3.asteroids.renderer;
 
 import java.util.Arrays;
 import java.util.List;
@@ -10,17 +10,17 @@ public class Textures {
     public static final Texture ASTEROID2 = new Texture(textureLocation("asteroids/AsteroidBig2"), 0, 0, 64, 64);
     public static final Texture BULLET = new Texture(textureLocation("asteroids/bullet"), 0, 0, 8, 8);
 
-    public static final List<Texture> textures = Arrays.asList(PLAYER, ASTEROID1, ASTEROID2, BULLET);
+    public static final List<Texture> textures = Arrays.asList(PLAYER, ASTEROID1, ASTEROID2, BULLET); // add new textures to the list
 
     public static void loadTexture(int i) {
         if (textures.get(i) != null) {
-            textures.get(i).load();
+            textures.get(i).load(); // handle loading all textures immediately on startup
         }
     }
 
     public static String NULL() {
         return textureLocation("null");
-    }
+    } // imagine being able to name a method "null"
 
     public static String textureLocation(String fileName) {
         return "/textures/" + fileName + ".png";

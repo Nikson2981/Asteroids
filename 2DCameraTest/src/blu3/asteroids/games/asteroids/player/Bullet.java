@@ -1,6 +1,6 @@
-package blu3.hub.games.asteroids.player;
+package blu3.asteroids.games.asteroids.player;
 
-import blu3.hub.Main;
+import blu3.asteroids.Main;
 
 public class Bullet {
 

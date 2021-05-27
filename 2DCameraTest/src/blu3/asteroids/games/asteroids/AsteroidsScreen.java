@@ -1,11 +1,11 @@
-package blu3.hub.games.asteroids;
+package blu3.asteroids.games.asteroids;
 
-import blu3.hub.Main;
-import blu3.hub.games.asteroids.asteroids.Asteroid;
-import blu3.hub.games.asteroids.player.Bullet;
-import blu3.hub.games.asteroids.player.Player;
-import blu3.hub.renderer.Renderer;
-import blu3.hub.renderer.Textures;
+import blu3.asteroids.Main;
+import blu3.asteroids.games.asteroids.asteroids.Asteroid;
+import blu3.asteroids.games.asteroids.player.Bullet;
+import blu3.asteroids.games.asteroids.player.Player;
+import blu3.asteroids.renderer.Renderer;
+import blu3.asteroids.renderer.Textures;
 
 import java.awt.*;
 import java.util.Random;

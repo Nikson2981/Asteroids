@@ -1,19 +1,21 @@
-package blu3.hub;
+package blu3.asteroids;
 
-import blu3.hub.games.asteroids.Game;
+import blu3.asteroids.games.asteroids.Game;
 
-public class GameThread implements Runnable{
+public class GameThread implements Runnable { // guess who learned how to multithread
 
     private boolean began = false, gameStarted = false;
     private final TimerUtils timer;
+
     public GameThread() {
         timer = new TimerUtils();
     }
 
     @Override
     public void run() {
-        while(began) {
-            if (timer.passedS(1 / 60f)) {
+        while (began) {
+            if (timer.passedS(1 / 60f)) { // 60 fps... hard limit as i cba to add delta time
+// ... i'm certain your pc can handle it
                 try {
                     if (!gameStarted) {
                         Game.startGame();

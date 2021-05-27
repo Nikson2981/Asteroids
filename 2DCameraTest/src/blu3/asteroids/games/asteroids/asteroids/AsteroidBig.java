@@ -1,13 +1,13 @@
-package blu3.hub.games.asteroids.asteroids;
+package blu3.asteroids.games.asteroids.asteroids;
 
-import blu3.hub.Main;
+import blu3.asteroids.Main;
 
-public class AsteroidMedium extends Asteroid {
+public class AsteroidBig extends Asteroid{
 
     private int x, y;
     private final int motionX, motionY;
 
-    public AsteroidMedium(int startX, int startY, int motionX, int motionY) {
+    public AsteroidBig(int startX, int startY, int motionX, int motionY) {
         this.x = startX;
         this.y = startY;
         this.motionX = motionX;
@@ -16,20 +16,13 @@ public class AsteroidMedium extends Asteroid {
 
     @Override
     public int getSize() {
-        return 32;
+        return 64;
     }
 
     public void move() {
         x += motionX;
         y += motionY;
         checkWrap();
-    }
-
-    public void checkWrap() {
-        if (x < 0) x = Main.WIDTH;
-        if (x > Main.WIDTH) x = 0;
-        if (y < 0) y = Main.HEIGHT;
-        if (y > Main.HEIGHT) y = 0;
     }
 
     @Override
@@ -40,6 +33,13 @@ public class AsteroidMedium extends Asteroid {
     @Override
     public int getY() {
         return y;
+    }
+
+    public void checkWrap() {
+        if (x < 0) x = Main.WIDTH;
+        if (x > Main.WIDTH) x = 0;
+        if (y < 0) y = Main.HEIGHT;
+        if (y > Main.HEIGHT) y = 0;
     }
 
     @Override

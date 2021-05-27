@@ -1,4 +1,4 @@
-package blu3.hub.math;
+package blu3.asteroids.math;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

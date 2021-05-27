@@ -1,9 +1,9 @@
-package blu3.hub.games.asteroids.player;
+package blu3.asteroids.games.asteroids.player;
 
-import blu3.hub.Main;
-import blu3.hub.games.asteroids.asteroids.Asteroid;
+import blu3.asteroids.Main;
+import blu3.asteroids.games.asteroids.asteroids.Asteroid;
 
-public class Player {
+public class Player { // all of this code is awful
 
     public static double x = Main.WIDTH / 2.0, y = Main.HEIGHT / 2.0, rot, mX, mY;
     public static int I_FRAMES = 80;
@@ -33,19 +33,18 @@ public class Player {
         double acceleration = 0.35;
         double velocityDecay = 0.98;
         double angle = Math.toRadians(rot - 90);
-        if (angle > (2 * Math.PI)) //Keep angle within bounds of 0 to 2*PI
+        if (angle > (2 * Math.PI))
             angle -= (2 * Math.PI);
         else if (angle < 0)
             angle += (2 * Math.PI);
-        if (thrust) { //adds accel to velocity in direction pointed
-            //calculates components of accel and adds them to velocity
+        if (thrust) {
             mX += acceleration * Math.cos(angle);
             mY += acceleration * Math.sin(angle);
         }
-        x += mX; //move the ship by adding velocity to position
+        x += mX;
         y += mY;
-        mX *= velocityDecay; //slows ship down by percentages (velDecay
-        mY *= velocityDecay; //should be a decimal between 0 and 1
+        mX *= velocityDecay;
+        mY *= velocityDecay;
     }
 
     public static boolean collision(Asteroid asteroid) {

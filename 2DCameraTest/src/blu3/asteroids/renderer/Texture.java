@@ -1,6 +1,6 @@
-package blu3.hub.renderer;
+package blu3.asteroids.renderer;
 
-import blu3.hub.Logger;
+import blu3.asteroids.Logger;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

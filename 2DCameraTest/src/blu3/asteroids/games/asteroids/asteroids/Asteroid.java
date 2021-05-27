@@ -1,9 +1,9 @@
-package blu3.hub.games.asteroids.asteroids;
+package blu3.asteroids.games.asteroids.asteroids;
 
-import blu3.hub.games.asteroids.player.Bullet;
-import blu3.hub.renderer.Texture;
+import blu3.asteroids.games.asteroids.player.Bullet;
+import blu3.asteroids.renderer.Texture;
 
-public abstract class Asteroid {
+public abstract class Asteroid { // take this and fuck off
     private Texture texture;
     private double rot;
 
