@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="2DCameraTest:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c93dcddf-7ed5-49d5-9d51-e66f614fe862" name="Default Changelist" comment="s">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/2DCameraTest_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/textures/asteroids/AsteroidBig1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/textures/asteroids/AsteroidBig2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/textures/asteroids/Player.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/textures/asteroids/bullet.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/textures/null.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blu3/cameratest/asteroidsgame/AsteroidsScreen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blu3/cameratest/asteroidsgame/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blu3/cameratest/asteroidsgame/asteroids/Asteroid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blu3/cameratest/asteroidsgame/asteroids/AsteroidBig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blu3/cameratest/asteroidsgame/asteroids/AsteroidMedium.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blu3/cameratest/asteroidsgame/player/Bullet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blu3/cameratest/asteroidsgame/player/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blu3/cameratest/math/StringListEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/blu3/cameratest/math/TextureListEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/TextureAtlas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/bottomleftdirtcorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/bottomrightdirtcorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/dirt1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/dirt2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/dirt3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/dirt4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/downwardgrassdirttile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/gabriel.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/grasstilesolo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/img.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/leftgrassdirttile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/rightgrassdirttile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/topleftdirtcorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/toprightdirtcorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/2DCameraTest/textures/upwardgrassdirttile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/TextureAtlas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/bottomleftdirtcorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/bottomrightdirtcorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/dirt1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/dirt2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/dirt3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/dirt4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/downwardgrassdirttile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/grasstilesolo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/leftgrassdirttile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/rightgrassdirttile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/topleftdirtcorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/toprightdirtcorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/textures/upwardgrassdirttile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/blu3/cameratest/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/blu3/cameratest/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/blu3/cameratest/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/ShittyCodeException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/blu3/cameratest/ShittyCodeException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/controls/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/blu3/cameratest/controls/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/controls/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/blu3/cameratest/controls/InputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/entity/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/entity/entities/Entity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/renderer/Camera.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/renderer/PixelPos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/blu3/cameratest/renderer/PixelPos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/renderer/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/blu3/cameratest/renderer/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/renderer/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/blu3/cameratest/renderer/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/renderer/Textures.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/blu3/cameratest/renderer/Textures.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/screen/TitleScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/world/FastNoise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/blu3/cameratest/world/World.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1oWqtSrmkfRA9gDBAqvBma19m9Q" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Desktop/microcraft" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\allah\OneDrive\Test\2DGameTest\2DCameraTest\res\textures" />
+      <recent name="C:\Users\allah\Desktop\2DCameraTest\src\blu3\cameratest\controls" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\allah\Desktop\2DCameraTest\2DCameraTest" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="blu3.cameratest.asteroidsgame.asteroids" />
+      <recent name="blu3.cameratest.world" />
+      <recent name="blu3.cameratest" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="blu3.cameratest.Main" />
+      <module name="2DCameraTest" />
+      <option name="PROGRAM_PARAMETERS" value="65b" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="blu3.cameratest.threads.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c93dcddf-7ed5-49d5-9d51-e66f614fe862" name="Default Changelist" comment="" />
+      <created>1613412909995</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613412909995</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="s" />
+    <option name="LAST_COMMIT_MESSAGE" value="s" />
+  </component>
+</project>
