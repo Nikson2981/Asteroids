@@ -10,7 +10,7 @@ the directory is called 2dcameratest which just goes to show how little of an id
 
 the code is shit, you'd be better off writing your own.
 
-jarfile in releases probably
+jarfile in releases probably... and it's probably outdated compared to the code too
 
 # Controls
 
