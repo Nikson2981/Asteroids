@@ -16,10 +16,10 @@ public class Controller {
 
     public void tick(boolean forward, boolean back, boolean left, boolean right, boolean mouse, boolean space) { // no moving backwards lol
         Player.updateMoveSpeed(forward);
-        if (left) {
+        if (left && Player.alive) {
             Player.rot -= 3;
         }
-        if (right) {
+        if (right && Player.alive) {
             Player.rot += 3;
         }
         if (!spaceDown && space) {
@@ -28,7 +28,7 @@ public class Controller {
         }
         if (spaceDown && !space) spaceDown = false;
 
-        if (!mouseDown && mouse) {
+        if (!mouseDown && mouse) { // could have used a better button for this but... nope lol why would i EVER do something smart?
             Main.NODEBUG = !Main.NODEBUG;
             mouseDown = true;
             Sounds.BEEP.play();

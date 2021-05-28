@@ -20,13 +20,15 @@ import static blu3.asteroids.renderer.Textures.loadTexture;
 
 //------------------------------------------------------------------------------
 // super fucking janky shit right here
+// comments are few and far between so you'll just have to live with that
+// most of them are just me complaining about things anyway
 //------------------------------------------------------------------------------
 public class Main extends Canvas implements Runnable {
 
     private final BufferedImage img;
     private final int[] pixels;
     private boolean running = false;
-    public static final int WIDTH = 1280, HEIGHT = WIDTH / 16 * 9; // 720p by default
+    public static final int HEIGHT = 720, WIDTH = HEIGHT * 16 / 9; // 720p by default
     public static final String NAME = "Asteroids";
     public final InputHandler input;
     private final Controller controls;
@@ -80,6 +82,7 @@ public class Main extends Canvas implements Runnable {
         GameThread.main(args);
     }
 
+
     @Override
     public void run() {
         // would you believe that all this is for an FPS counter?
@@ -106,11 +109,11 @@ public class Main extends Canvas implements Runnable {
             }
             try {
                 if (ticked) {
-                    render();
+                    render(); // FINALLY we get to rendering
                     frames++;
                 }
             } catch (Exception e) {
-                Logger.ERROR("[Fatal] Exception caught! Shutting down...");
+                Logger.ERROR("[Fatal] Exception caught! Shutting down..."); // pls no
                 e.printStackTrace();
                 System.exit(1);
             }
@@ -124,6 +127,8 @@ public class Main extends Canvas implements Runnable {
         running = true;
         long ms = System.currentTimeMillis();
         Runtime.getRuntime().addShutdownHook(new Thread(() -> { // for debug purposes only
+            Sounds.CLOSE_GAME.play(); // except for this
+            long newMs = System.currentTimeMillis();
             long seconds = (System.currentTimeMillis() - ms) / 1000;
             String str;
             long minutes, newSeconds;
@@ -140,6 +145,10 @@ public class Main extends Canvas implements Runnable {
             }
             Logger.INFO("Total runtime: " + str);
             Logger.INFO("Shutting down...");
+            while (((System.currentTimeMillis() - newMs) / 1000) < 1) {
+                // do literally nothing just to delay for a second to let the sound play lmfao
+                // this is what it's come to
+            }
         }));
     }
 

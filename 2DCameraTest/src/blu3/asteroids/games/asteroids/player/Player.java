@@ -30,6 +30,7 @@ public class Player { // all of this code is awful
     }
 
     public static void move() {
+        if (!alive) return;
         double acceleration = 0.35;
         double velocityDecay = 0.98;
         double angle = Math.toRadians(rot - 90);

@@ -14,12 +14,13 @@ public class Sounds {
     public static final Sound SHOOT3 = new Sound(soundLocation("hks3"));
     public static final Sound BEEP = new Sound(soundLocation("blip1"));
     public static final Sound NEW_WAVE = new Sound(soundLocation("ammopickup2"));
+    public static final Sound CLOSE_GAME = new Sound(soundLocation("die3"));
 
     public static String soundLocation(String fileName) {
         return "/sounds/" + fileName + ".wav";
     } // .wav only
 
-    public static final List<Sound> sounds = Arrays.asList(EXPLODE1, EXPLODE2, EXPLODE3, SHOOT1, SHOOT2, SHOOT3, BEEP, NEW_WAVE); // add new sounds to the list
+    public static final List<Sound> sounds = Arrays.asList(EXPLODE1, EXPLODE2, EXPLODE3, SHOOT1, SHOOT2, SHOOT3, BEEP, NEW_WAVE, CLOSE_GAME); // add new sounds to the list
 
     public static void loadSound(int i) {
         if (sounds.get(i) != null) {

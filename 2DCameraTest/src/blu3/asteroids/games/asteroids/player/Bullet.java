@@ -21,8 +21,8 @@ public class Bullet {
     }
 
     public void calculateAngle() {
-        mX = Math.sin(Math.toRadians(Player.rot)) * 20;
-        mY = -Math.cos(Math.toRadians(Player.rot)) * 20;
+        mX = Math.sin(Math.toRadians(Player.rot)) * 20; // * 20? why? must mean something clearly because it works
+        mY = -Math.cos(Math.toRadians(Player.rot)) * 20; // but i have no memory of ever doing that
     }
 
     public int getX() {

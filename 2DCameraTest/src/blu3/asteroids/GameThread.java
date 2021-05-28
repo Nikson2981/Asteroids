@@ -2,6 +2,8 @@ package blu3.asteroids;
 
 import blu3.asteroids.games.asteroids.Game;
 
+import javax.swing.*;
+
 public class GameThread implements Runnable { // guess who learned how to multithread
 
     private boolean began = false, gameStarted = false;
@@ -27,6 +29,8 @@ public class GameThread implements Runnable { // guess who learned how to multit
                 } catch (Exception e) {
                     Logger.ERROR("[Fatal] Exception caught! Shutting down...");
                     e.printStackTrace();
+                    JFrame frame = new JFrame();
+                    JOptionPane.showMessageDialog(frame, "[Logger/ERROR]: Something went wrong... And the game has crashed. Fear not! Simply launch the game again to continue playing!", "", JOptionPane.ERROR_MESSAGE);
                     System.exit(1);
                 }
                 timer.reset();
