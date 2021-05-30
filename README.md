@@ -15,6 +15,9 @@ jarfile in releases probably... and it's probably outdated compared to the code 
 # Controls
 
  LMB - toggle debug (i know it's awful)
+ 
  W, A, D - movement and turning
+ 
  SPACE - shoot
+ 
 that's it
