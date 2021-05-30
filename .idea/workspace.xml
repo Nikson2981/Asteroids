@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3e9c66d1-3255-42d7-bb18-3e619003cf27" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/res/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/res/textures/asteroids/AsteroidBig1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/res/textures/asteroids/AsteroidBig2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/GameThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/GameThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/TimerUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/audio/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/audio/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/audio/Sounds.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/audio/Sounds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/controls/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/controls/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/controls/InputHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/controls/InputHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/games/asteroids/AsteroidsScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/games/asteroids/AsteroidsScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/games/asteroids/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/games/asteroids/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/games/asteroids/asteroids/AsteroidMedium.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/games/asteroids/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/games/asteroids/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/math/StreamUtilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/math/StreamUtilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/renderer/PixelPos.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/renderer/PixelPos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/renderer/Renderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/renderer/Renderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/renderer/Texture.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/renderer/Texture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/renderer/Textures.java" beforeDir="false" afterPath="$PROJECT_DIR$/2DCameraTest/src/blu3/asteroids/renderer/Textures.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1tEvkIxH8iNAfrCLV5Fd1DLhxDT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e9c66d1-3255-42d7-bb18-3e619003cf27" name="Default Changelist" comment="" />
+      <created>1622347207012</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622347207012</updated>
+    </task>
+    <servers />
+  </component>
+</project>
