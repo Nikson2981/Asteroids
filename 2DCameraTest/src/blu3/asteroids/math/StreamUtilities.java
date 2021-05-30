@@ -13,23 +13,15 @@ import java.util.logging.Logger;
 // https://github.com/gurkenlabs/litiengine/blob/16f486f584551c0dee01d0b689611790f969b5a0/src/de/gurkenlabs/litiengine/util/io/StreamUtilities.java#L13
 // tysm for existing
 
+// ...
+
+// the class is bared down to only what i need, of course
+
 public final class StreamUtilities {
     private static final Logger log = Logger.getLogger(StreamUtilities.class.getName());
 
     private StreamUtilities() {
         throw new UnsupportedOperationException();
-    }
-
-    public static void copy(final File file, final OutputStream out) throws IOException {
-        try (InputStream in = new FileInputStream(file)) {
-            copy(in, out);
-        }
-    }
-
-    public static void copy(final InputStream in, final File file) throws IOException {
-        try (OutputStream out = new FileOutputStream(file)) {
-            copy(in, out);
-        }
     }
 
     public static void copy(final InputStream in, final OutputStream out) throws IOException {

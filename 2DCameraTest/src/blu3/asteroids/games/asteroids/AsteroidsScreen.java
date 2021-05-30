@@ -30,12 +30,12 @@ public class AsteroidsScreen {
             DP_posOffset = 0;
             DP_EXPLOSION_OFFSET = 0;
         } else {
-            DP_posOffset += 0.1;
-            DP_EXPLOSION_OFFSET++;
+            DP_posOffset += 0.1; // fuck c++ naming conventions bro
+            DP_EXPLOSION_OFFSET++; // this is even worse
             double angle = Math.toRadians(Player.rot - 90);
             Renderer.drawTexture(Textures.P_DEAD1, (int) (Player.getX() - 16 - DP_posOffset * Math.cos(angle)), (int) (Player.getY() - 16 - DP_posOffset * Math.sin(angle)), 32, 32, (int) Player.rot);
-            Renderer.drawTexture(Textures.P_DEAD2, (int) (Player.getX() - 16 + DP_posOffset * Math.cos(angle)), (int) (Player.getY() - 16 - DP_posOffset * Math.sin(angle)), 32, 32, (int) Player.rot);
-            Renderer.drawTexture(Textures.P_DEAD3, (int) (Player.getX() - 16 - DP_posOffset * Math.cos(angle)), (int) (Player.getY() + 16 - DP_posOffset * Math.sin(angle)), 32, 32, (int) Player.rot);
+            Renderer.drawTexture(Textures.P_DEAD2, (int) (Player.getX() - 16 + DP_posOffset * Math.cos(angle)), (int) (Player.getY() - 16 - DP_posOffset * Math.sin(angle)), 32, 32, (int) Player.rot); // whats worse is that these all appear to go in random directions anyway
+            Renderer.drawTexture(Textures.P_DEAD3, (int) (Player.getX() - 16 - DP_posOffset * Math.cos(angle)), (int) (Player.getY() + 16 - DP_posOffset * Math.sin(angle)), 32, 32, (int) Player.rot); // even when they aren't intended to
             if (DP_posOffset <= 5) {
                 Renderer.drawTexture(Textures.P_EXP1, Player.getX() - 16 - (DP_EXPLOSION_OFFSET / 2), Player.getY() - 16 - (DP_EXPLOSION_OFFSET / 2), 32 + DP_EXPLOSION_OFFSET, 32 + DP_EXPLOSION_OFFSET, random.nextInt(360));
             }
@@ -47,24 +47,20 @@ public class AsteroidsScreen {
             Renderer.drawRect(asteroid.getX() - asteroid.getSize() / 2, asteroid.getY() - asteroid.getSize() / 2, asteroid.getX() + asteroid.getSize() / 2, asteroid.getY() + asteroid.getSize() / 2, 0xAA00FFFF);
         }
         for (Bullet bullet : Game.bullets) {
-            Renderer.drawRect(bullet.getX() - 4, bullet.getY() - 4, bullet.getX() + 4, bullet.getY() + 4, 0xFF00FFFF);
+            Renderer.drawRect(bullet.getX() - 4, bullet.getY() - 4, bullet.getX() + 4, bullet.getY() + 4, 0xFF00FF00);
         }
         Renderer.drawRect(Player.getX() - 16, Player.getY() - 16, Player.getX() + 16, Player.getY() + 16, 0xFFFF0000);
         Renderer.drawString("Debug mode enabled! Click to exit.", Main.WIDTH / 2 - 180, 30, Color.WHITE);
-
         Renderer.drawString(Player.mX + ", " + Player.mY, Main.WIDTH / 2 - 180, 60, Color.WHITE);
-
     }
 
     public static void drawHUD() {
+        if (Game.paused()) return;
         if (score < Game.score) score++;
         if (score > Game.score) score -= 5;
         Renderer.drawString("Level " + Game.level, Main.WIDTH - 150, 30, Color.WHITE);
         Renderer.drawString("Score: " + score, Main.WIDTH - 150, 60, Color.WHITE);
-
-        if (!Player.alive)
-            Renderer.drawString(Game.resetTicks + "", 30, 60, Color.WHITE);
-        if (Player.I_FRAMES > 0)
-            Renderer.drawString(Player.I_FRAMES + "", Player.getX() - 13, Player.getY() - 20, Color.WHITE);
+        if (!Player.alive) Renderer.drawString(Game.resetTicks + "", 30, 60, Color.WHITE);
+        if (Player.I_FRAMES > 0) Renderer.drawString(Player.I_FRAMES + "", Player.getX() - 13, Player.getY() - 20, Color.WHITE);
     }
 }

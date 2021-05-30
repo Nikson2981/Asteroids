@@ -50,7 +50,7 @@ public class Renderer {
         }
         // Run through all pixels that PixelPos.fill(IIIII) gives us and set their colours accordingly.
         // This isn't efficient in the slightest... Too bad!
-        for (PixelPos pos : PixelPos.fill((short) Math.max(left, 0), (short) Math.max(top, 0), (short) Math.min(right, Main.WIDTH), (short) Math.min(bottom, Main.HEIGHT), colour)) {
+        for (PixelPos pos : PixelPos.fill(Math.max(left, 0), Math.max(top, 0), Math.min(right, Main.WIDTH), Math.min(bottom, Main.HEIGHT), colour)) {
             // math stuff above to get rid of any pixels not within the bounds of the screen
             // trying to save as much rendering time as possible
             pixels[pos.getScreenPosition(Main.WIDTH)] = pos.getColour();

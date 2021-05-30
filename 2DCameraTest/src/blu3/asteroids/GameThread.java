@@ -7,10 +7,11 @@ import javax.swing.*;
 public class GameThread implements Runnable { // guess who learned how to multithread
 
     private boolean began = false, gameStarted = false;
-    private final TimerUtils timer;
+    private final SpaceTimeContinuum timer;
+    private static GameThread gameThread;
 
     public GameThread() {
-        timer = new TimerUtils();
+        timer = new SpaceTimeContinuum();
     }
 
     @Override
@@ -18,7 +19,10 @@ public class GameThread implements Runnable { // guess who learned how to multit
         while (began) {
             if (timer.passedS(1 / 60f)) { // 60 fps... hard limit as i cba to add delta time
 // ... i'm certain your pc can handle it
-                try {
+                if (timer.passedS(1 / 30f)) {
+                    Logger.WARN("Missed a frame");
+                }
+                try {                                                                                   // even with my shitass code
                     if (!gameStarted) {
                         Game.startGame();
                         gameStarted = true;
@@ -39,8 +43,13 @@ public class GameThread implements Runnable { // guess who learned how to multit
     }
 
     public static void main(String[] args) {
-        GameThread gameThread = new GameThread();
+        gameThread = new GameThread();
         gameThread.start();
+    }
+
+    public static void stop() {
+        gameThread.began = false;
+        Logger.INFO("Game thread stopped.");
     }
 
     public void start() {
@@ -48,6 +57,7 @@ public class GameThread implements Runnable { // guess who learned how to multit
         began = true;
         Thread thread = new Thread(this, "GameThread");
         thread.start();
-        Logger.INFO("Game thread started.");
+        Logger.INFO("Game thread started. \n");
+
     }
 }

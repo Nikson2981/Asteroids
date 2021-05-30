@@ -26,11 +26,11 @@ public class Texture {
     public void load() {
         if (loaded) return;
         long ms = System.currentTimeMillis();
-
         try {
             image = ImageIO.read(Texture.class.getResourceAsStream(path));
         } catch (Exception e) {
             try {
+                Logger.WARN("Failed to load texture " + path + ", attempting fallback.");
                 image = ImageIO.read(Texture.class.getResourceAsStream(Textures.NULL()));
             } catch (Exception f) {
                 e.printStackTrace();

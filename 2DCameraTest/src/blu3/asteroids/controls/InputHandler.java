@@ -1,5 +1,7 @@
 package blu3.asteroids.controls;
 
+import blu3.asteroids.games.asteroids.Game;
+
 import java.awt.event.*;
 import java.util.Arrays;
 
@@ -12,64 +14,12 @@ import java.util.Arrays;
 //------------------------------------------------------------------------------
 
 
-// ... when did i write this? i don't remember writing half these comments
+// ...
+// when did i write this? i don't remember writing half these comments
 public class InputHandler implements KeyListener, FocusListener, MouseListener, MouseMotionListener {
+
     public final boolean[] key = new boolean[68836];
-    public static int MouseX;
-    public static int MouseY;
     public boolean mouseDown = false;
-
-    @Override
-    public void mouseDragged(MouseEvent e) {
-        // do nothing
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
-        MouseX = e.getX();
-        MouseY = e.getY();
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        // do nothing
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-        mouseDown = true;
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        mouseDown = false;
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-        // do nothing
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-        // do nothing
-    }
-
-    @Override
-    public void focusGained(FocusEvent e) {
-        // TOOD: autoresume setting
-    }
-
-    @Override
-    public void focusLost(FocusEvent e) {
-        Arrays.fill(key, false);
-        // TODO: pause
-    }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-        // TODO: something to do with typing rofl
-    }
 
     @Override
     public void keyPressed(KeyEvent e) {
@@ -85,5 +35,57 @@ public class InputHandler implements KeyListener, FocusListener, MouseListener, 
         if (keyCode > 0 && keyCode < key.length) {
             key[keyCode] = false;
         }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        if (Game.paused()) return; // don't accidentally shoot or something when regaining focus ie. unpausing
+        mouseDown = true;
+    }
+
+    @Override
+    public void focusLost(FocusEvent e) {
+        Arrays.fill(key, false);
+        Game.setPaused(true);
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        mouseDown = false;
+    }
+
+    @Override
+    public void focusGained(FocusEvent e) {
+        Game.setPaused(false);
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        // do nothing
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        // do nothing
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        // do nothing
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        // do nothing
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        // do nothing
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        // do nothing
     }
 }

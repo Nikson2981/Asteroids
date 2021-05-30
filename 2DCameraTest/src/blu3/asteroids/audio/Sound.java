@@ -43,10 +43,10 @@ public class Sound { // this is really bad sound code and i highly recommend aga
         loaded = true;
     }
 
-    private Clip createNewClip() {
+    public Clip createNewClip() {
         try {
             Clip clip = AudioSystem.getClip();
-            clip.open(this.format, this.bytes, 0, this.bytes.length);
+            clip.open(format, bytes, 0, bytes.length);
             clips.add(clip);
             return clip;
         } catch (LineUnavailableException e) {
@@ -64,6 +64,6 @@ public class Sound { // this is really bad sound code and i highly recommend aga
                     .orElseGet(this::createNewClip);
             clip.setFramePosition(0);
             clip.start();
-        }).start();
+        }, path).start();
     }
 }

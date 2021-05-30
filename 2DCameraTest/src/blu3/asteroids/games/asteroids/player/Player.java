@@ -19,17 +19,11 @@ public class Player { // all of this code is awful
         mY = 0;
     }
 
-    public static void updateMoveSpeed(boolean thrust) {
+    public static void updateThrust(boolean thrust) {
         Player.thrust = thrust;
     }
 
     public static void updatePosition() {
-        if (!alive) return;
-        move();
-        checkWrap();
-    }
-
-    public static void move() {
         if (!alive) return;
         double acceleration = 0.35;
         double velocityDecay = 0.98;
@@ -46,17 +40,14 @@ public class Player { // all of this code is awful
         y += mY;
         mX *= velocityDecay;
         mY *= velocityDecay;
-    }
-
-    public static boolean collision(Asteroid asteroid) {
-        return (Player.getX() + 16 > asteroid.getX() - asteroid.getSize() / 2) && (Player.getX() - 16 < asteroid.getX() + asteroid.getSize() / 2) && (Player.getY() + 16 > asteroid.getY() - asteroid.getSize() / 2) && (Player.getY() - 16 < asteroid.getY() + asteroid.getSize() / 2);
-    }
-
-    private static void checkWrap() {
         if (x < 0) x = Main.WIDTH;
         if (x > Main.WIDTH) x = 0;
         if (y < 0) y = Main.HEIGHT;
         if (y > Main.HEIGHT) y = 0;
+    }
+
+    public static boolean collision(Asteroid asteroid) {
+        return (Player.getX() + 16 > asteroid.getX() - asteroid.getSize() / 2) && (Player.getX() - 16 < asteroid.getX() + asteroid.getSize() / 2) && (Player.getY() + 16 > asteroid.getY() - asteroid.getSize() / 2) && (Player.getY() - 16 < asteroid.getY() + asteroid.getSize() / 2);
     }
 
     public static int getX() {

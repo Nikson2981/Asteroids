@@ -59,15 +59,15 @@ public class Main extends Canvas implements Runnable {
 
     public static void main(String[] args) {
         Main main = new Main();
-        int i = 0;
-        while (i < Sounds.sounds.size()) {
-            loadSound(i);
-            i++;
+        int index = 0;
+        while (index < Textures.textures.size()) { // load all textures, one at a time
+            loadTexture(index);
+            index++;
         }
-        i = 0;
-        while (i < Textures.textures.size()) { // load all assets now, one at a time
-            loadTexture(i);
-            i++;
+        index = 0;
+        while (index < Sounds.sounds.size()) { // start back from 0 and load all sounds, one at a time
+            loadSound(index);
+            index++;
         }
         JFrame frame = new JFrame();
         frame.add(main);
@@ -96,8 +96,8 @@ public class Main extends Canvas implements Runnable {
             long currentTime = System.nanoTime();
             long passedTime = currentTime - previousTime;
             previousTime = currentTime;
-            unprocessedSeconds += passedTime / 1000000000.0;
-            while (unprocessedSeconds > secondsPerTick) {
+            unprocessedSeconds += passedTime / 1000000000.0; // i have no fucking clue what this does anymore
+            while (unprocessedSeconds > secondsPerTick) { // i guess it works (?)
                 unprocessedSeconds -= secondsPerTick;
                 ticked = true;
                 tickCount++;
@@ -113,11 +113,16 @@ public class Main extends Canvas implements Runnable {
                     frames++;
                 }
             } catch (Exception e) {
-                Logger.ERROR("[Fatal] Exception caught! Shutting down..."); // pls no
+                Logger.ERROR("[Fatal] Exception caught! Shutting down...");
                 e.printStackTrace();
                 System.exit(1);
             }
         }
+    }
+
+    private void stop() {
+        running = false;
+        Logger.INFO("Render thread stopped.");
     }
 
     private void start() {
@@ -143,22 +148,19 @@ public class Main extends Canvas implements Runnable {
                     str = hours + "h, " + newMinutes + "m, " + newSeconds + "s";
                 }
             }
-            Logger.INFO("Total runtime: " + str);
-            Logger.INFO("Shutting down...");
+            stop();
+            GameThread.stop();
             while (((System.currentTimeMillis() - newMs) / 1000) < 1) {
                 // do literally nothing just to delay for a second to let the sound play lmfao
                 // this is what it's come to
             }
+            Logger.INFO("Total runtime: " + str);
+            Logger.INFO("Shutting down...");
         }));
     }
 
     public void tick(boolean[] key, boolean mouseDown) {
-        boolean forward = key[KeyEvent.VK_W];
-        boolean counterClockwise = key[KeyEvent.VK_A];
-        boolean reverse = key[KeyEvent.VK_S];
-        boolean clockwise = key[KeyEvent.VK_D];
-        boolean space = key[KeyEvent.VK_SPACE];
-        controls.tick(forward, reverse, counterClockwise, clockwise, mouseDown, space);
+        controls.tick(key, mouseDown); // ffs
     }
 
 
@@ -179,16 +181,16 @@ public class Main extends Canvas implements Runnable {
                 imag.rotate(rot, entry.getParams()[0] + (entry.getParams()[2] / 2.0), entry.getParams()[1] + (entry.getParams()[3] / 2.0)); // lol
             }
             imag.drawImage(entry.getTexture(), entry.getParams()[0], entry.getParams()[1], entry.getParams()[2], entry.getParams()[3], null); // the fuck was i on?
-            imag.dispose();
+            imag.dispose();                                                                                                                           // i mean it works... so..
         }
         g.setFont(new Font("Verdana", Font.PLAIN, 20));
-        for (StringListEntry entry : Renderer.getStringsToDraw()) {
+        for (StringListEntry entry : Renderer.getStringsToDraw()) { // uuf
             g.setColor(entry.getColour());
             g.drawString(entry.getText(), entry.getX(), entry.getY());
         }
-        g.setColor(Color.WHITE);
-        g.drawString(fps + " FPS", 20, 30);
-        g.dispose();
-        bs.show();
+        g.setColor(Color.WHITE); // need i?
+        g.drawString(fps + " FPS", 20, 30); // i needn't
+        g.dispose(); // but i will anyway
+        bs.show(); // because fuck you, that's why
     }
 }
