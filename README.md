@@ -20,4 +20,4 @@ jarfile in releases probably... and it's probably outdated compared to the code 
  
  SPACE - shoot
  
-that's it
+that's it (maybe more coming soon)
