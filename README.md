@@ -16,7 +16,6 @@ jarfile in releases probably... and it's probably outdated compared to the code 
   - added a tribute to doom but its with a counter-strike death sound
   - sort of refactored the codebase
   - renamed some things and added more comments
-   - actual code coming to the repo soon as i accidentially fucked up the project file again :|
 
 # Controls
 
