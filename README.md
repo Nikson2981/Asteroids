@@ -1,3 +1,5 @@
+##shit old code that i wrote when i was still terrible at jave
+
 # Asteroids
 
 i never implemented lives; if you die it fully restarts
