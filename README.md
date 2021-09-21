@@ -1,4 +1,4 @@
-#shit old code that i wrote when i was still terrible at java
+## shit old code that i wrote when i was still terrible at java
 
 i never implemented lives; if you die it fully restarts
 
